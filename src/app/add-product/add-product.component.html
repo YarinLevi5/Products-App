@@ -1,0 +1,14 @@
+<div class="add-product">
+  <label>Name : </label>
+  <input type="text" placeholder="Name" [(ngModel)]="name" />
+  <label>Price : </label>
+  <input type="number" [(ngModel)]="price" />
+  <label>Shelf Life : </label>
+  <input type="date" [(ngModel)]="shelf_life" />
+  <input
+    type="button"
+    value="Add Product"
+    (click)="addProduct()"
+    class="addBtn"
+  />
+</div>

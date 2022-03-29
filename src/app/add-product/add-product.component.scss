@@ -1,0 +1,17 @@
+.add-product {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  width: 300px;
+}
+input {
+  padding: 3px;
+  margin: 7px;
+  text-align: center;
+}
+label {
+  color: blue;
+}
+.addBtn {
+  background-color: gray;
+}

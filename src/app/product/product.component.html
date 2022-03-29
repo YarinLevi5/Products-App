@@ -1,0 +1,30 @@
+<div class="product">
+  <div class="productFields" [ngClass]="editMode ? 'hide' : 'show'">
+    <p>Name : {{ product?.name | uppercase }}</p>
+    <p>Price : {{ product?.price | currency: "NIS" }}</p>
+    <p>Shelf Life : {{ product?.shelf_life | date: "dd/MM/yyyy" }}</p>
+  </div>
+
+  <div class="editProduct" [ngClass]="editMode ? 'show' : 'hide'">
+    <label
+      >Name :
+      <input type="text" [value]="product?.name | uppercase" #name />
+    </label>
+    <label
+      >Price :
+      <input type="number" [value]="product?.price" #price />
+    </label>
+    <label
+      >Shelf Life :
+      <input type="date" [value]="product?.shelf_life" #shelf_life />
+    </label>
+  </div>
+
+  <button
+    class="editBtn"
+    (click)="editProduct(name.value, price.value, shelf_life.value)"
+  >
+    {{ editAndSaveBtn ? "Save" : "Edit" }}
+  </button>
+  <button class="deleteBtn" (click)="deleteProduct()">Delete</button>
+</div>
