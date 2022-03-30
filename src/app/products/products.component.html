@@ -1,6 +1,10 @@
+<div class="filter">
+  <label>Filter by name : </label>
+  <input type="text" placeholder="Product Name" [(ngModel)]="productName" />
+</div>
 <div class="products">
   <app-product
-    *ngFor="let product of products"
+    *ngFor="let product of products | searchProduct: productName"
     [product]="product"
   ></app-product>
 </div>

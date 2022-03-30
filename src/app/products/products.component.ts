@@ -8,6 +8,7 @@ import { Product } from '../interfaces/product';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
+  productName = '';
   products: Product[] = [];
   constructor(private service: ProductService) {
     this.products = this.service.getAllProducts();

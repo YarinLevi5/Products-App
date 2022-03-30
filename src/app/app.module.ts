@@ -6,6 +6,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './product/product.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { SearchProductPipe } from './pipes/search-product.pipe';
+import { WrapperComponent } from './wrapper/wrapper.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SearchProductPipe } from './pipes/search-product.pipe';
     ProductComponent,
     AddProductComponent,
     SearchProductPipe,
+    WrapperComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

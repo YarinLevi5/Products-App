@@ -9,24 +9,28 @@ import { ProductService } from '../services/product.service';
 export class ProductComponent implements OnInit {
   @Input() product?: Product;
   editAndSaveBtn = false;
-  editMode = false;
+  edit = false;
+  clear = false;
+  name = '';
+  price = 0;
+  shelf_life = new Date();
 
   constructor(private service: ProductService) {}
   deleteProduct() {
     this.service.deleteProduct(this.product?.id || '');
   }
 
-  editProduct(name: string, price: string, shelf_life: string) {
+  editProduct() {
+    this.edit = !this.edit;
     this.editAndSaveBtn = true;
-    this.editMode = !this.editMode;
-
     let updatedProduct: Product = {
       id: this.product?.id,
-      name,
-      price: parseInt(price),
-      shelf_life: new Date(shelf_life),
+      name: this.name,
+      price: this.price,
+      shelf_life: this.shelf_life,
     };
     this.service.editProduct(updatedProduct);
+    this.clear = true;
   }
 
   ngOnInit(): void {}
